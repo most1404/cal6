@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/widget_background"
+    android:padding="14dp"
+    android:layoutDirection="rtl">
+
+    <!-- Header: Title, Persian Date and Vibrant Green Add Button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/widget_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="یادآورهای فعال"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/widget_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/widget_title"
+            android:text="۱۵ آبان ۱۴۰۳"
+            android:textColor="#A0AAB8"
+            android:textSize="12sp"
+            android:layout_alignParentStart="true" />
+
+        <!-- Green Round Add Action Button -->
+        <ImageButton
+            android:id="@+id/widget_add_button"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@android:drawable/ic_input_add"
+            android:background="@drawable/widget_add_btn_bg"
+            android:tint="#FFFFFF"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="افزودن یادآور جدید" />
+    </RelativeLayout>
+
+    <!-- 5 Filter Tabs Bar: گذشته, امروز, این هفته, این ماه, همه -->
+    <LinearLayout
+        android:id="@+id/widget_filter_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/filter_past"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="گذشته"
+            android:textColor="#8892B0"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/filter_today"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="امروز"
+            android:textColor="#3B82F6"
+            android:textStyle="bold"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/filter_week"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="این هفته"
+            android:textColor="#8892B0"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/filter_month"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="این ماه"
+            android:textColor="#8892B0"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/filter_all"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="همه"
+            android:textColor="#8892B0"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- Reminders List -->
+    <ListView
+        android:id="@+id/widget_reminders_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="6dp" />
+
+    <!-- Empty State -->
+    <TextView
+        android:id="@+id/widget_empty_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="همه کارهای امروز انجام شده‌اند 🎉"
+        android:textColor="#8892B0"
+        android:textSize="13sp" />
+</LinearLayout>
